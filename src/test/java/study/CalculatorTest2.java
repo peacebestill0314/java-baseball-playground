@@ -1,4 +1,3 @@
-/*
 package study;
 
 import org.junit.jupiter.api.AfterEach;
@@ -14,6 +13,11 @@ public class CalculatorTest2 {
     @BeforeEach
     public void setUp()  {
         cal = new Calculator();
+    }
+
+    @Test
+    public void 전체()  {
+        assertEquals(10, cal.calculator("2 + 3 * 4 / 2"));
     }
 
     @Test
@@ -41,4 +45,3 @@ public class CalculatorTest2 {
         cal = null;
     }
 }
-*/
