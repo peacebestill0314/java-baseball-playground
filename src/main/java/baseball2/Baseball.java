@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Baseball {
 
-    private final int p;
+    private final int position;
     private final int num;
 
-    public Baseball(int p, int num) {
-        this.p = p;
+    public Baseball(int position, int num) {
+        this.position = position;
         this.num = num;
 
     }
@@ -17,11 +17,9 @@ public class Baseball {
         if(this.equals(baseball)) {
             return BaseballStatus.STRIKE;
         }
-
         if(baseball.matchNum(this.num)){
             return BaseballStatus.BALL;
         }
-
         return BaseballStatus.NOTHING;
     }
 
@@ -35,12 +33,12 @@ public class Baseball {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Baseball baseball = (Baseball) o;
-        return p == baseball.p && num == baseball.num;
+        return position == baseball.position && num == baseball.num;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(p, num);
+        return Objects.hash(position, num);
     }
 }
 
