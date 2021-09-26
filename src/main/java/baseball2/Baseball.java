@@ -5,11 +5,11 @@ import java.util.Objects;
 public class Baseball {
 
     private final int position;
-    private final int num;
+    private final BaseballNumber num;
 
     public Baseball(int position, int num) {
         this.position = position;
-        this.num = num;
+        this.num = new BaseballNumber(num);
 
     }
 
@@ -24,7 +24,7 @@ public class Baseball {
     }
 
     // 객체에 직접 접근하지 말고 객체에 메세지를 보낸다.
-    private boolean matchNum(int num) {
+    private boolean matchNum(BaseballNumber num) {
         return this.num == num;
     }
 
