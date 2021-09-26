@@ -1,30 +1,35 @@
 package baseball;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BaseballTest {
+public class BallTest {
+
+    private Ball ball;
+
+    @BeforeEach
+    void setUp() {
+        ball = new Ball(1, 1);
+    }
 
     @Test
     void 스트라이크() {
-        Ball ball = new Ball(1, 1);
         BallStatus ballStatus = ball.play(new Ball(1, 1));
         assertThat(ballStatus).isEqualTo(BallStatus.STRIKE);
     }
 
     @Test
     void 볼() {
-        Ball ball = new Ball(1, 1);
         BallStatus ballStatus = ball.play(new Ball(2, 1));
         assertThat(ballStatus).isEqualTo(BallStatus.BALL);
     }
 
     @Test
     void 낫싱() {
-        Ball ball = new Ball(1, 1);
         BallStatus ballStatus = ball.play(new Ball(2, 2));
         assertThat(ballStatus).isEqualTo(BallStatus.NOTHING);
     }
